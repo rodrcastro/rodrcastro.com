@@ -1,10 +1,10 @@
 module.exports = {
-  title: "Nulite starter for Eleventy",
-  shortTitle: "Nulite starter 💊",
+  title: "Rodrigo Castro",
+  shortTitle: "Rodrigo Castro",
   description:
-    "A beautiful and elegant blog theme starter project por Eleventy",
-  url: "https://example.com/",
+    "A personal website and blog for Rodrigo Castro. Made with 💙, powered by Eleventy and using the Nulite theme",
+  url: "https://rodrcastro.com/",
   author: {
-    name: "Your Name Here",
+    name: "Rodrigo Castro",
   },
 };
