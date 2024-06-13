@@ -5,10 +5,13 @@ layout: layouts/default.liquid
 <div class="main-sections">
   <section>
     <h2>Personal website</h2>
-    <p>Hello 👋🏼 </p>
-    <p> I'm Rodrigo Castro, a technology enthusiast working at GitBook. My interests span from exploring the latest in tech trends to travelling, movies, TV shows and others. Outside of work, I enjoy diving into personal projects and connecting with like-minded people.
+    <p>Hello 👋🏼
+    </p>
+    <p>
+      I'm Rodrigo Castro, a technology enthusiast working at GitBook. My interests span from exploring the latest in tech trends to travelling, movies, TV shows and others. Outside of work, I enjoy diving into personal projects and connecting with like-minded people.
     </p><br>
     <p>Here you'll find my personal place on the internet, to share things I'm interested in, working with and anything in between</p>
+    {% include "social-media.liquid" %}
   </section>
   <hr>
   <section>
@@ -17,14 +20,19 @@ layout: layouts/default.liquid
     {% include "postlist.liquid" %}
   </section>
 
-  {% assign tagList = collections | postTags %} {% if tagList.length > 0 %}
+  {% assign tagList = collections | postTags %}
+  {% if tagList.length > 0 %}
     <section>
       <h2>Topics</h2>
       {%- for tag in tagList -%}
-      <a href="/tags/{{ tag.name }}">{{ tag.name }}({{ tag.count }})</a>{% if
-      forloop.last != true %}<span>, </span>{% endif %} {%- endfor -%}
+        <a href="/tags/{{ tag.name }}">{{ tag.name }}({{ tag.count }})</a>
+        {% if forloop.last != true %}
+          <span>,
+          </span>
+        {% endif %}
+      {%- endfor -%}
     </section>
-    {% endif %}
+  {% endif %}
 </div>
 
 <style>
