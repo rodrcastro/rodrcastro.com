@@ -2,7 +2,7 @@
   .footer {
     max-width: var(--container-max-size);
     padding: var(--space-7) var(--container-padding-sides);
-    margin: var(--space-6) auto 8rem auto;
+    margin: var(--space-6) auto 8rem;
   }
   .footer a {
     text-decoration: none;
@@ -30,9 +30,18 @@
 <footer class="footer">
   <nav>
     <ul class="footer-links">
-      <li><a href="/articles">Articles</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/rss">RSS</a></li>
+      <li>
+        <a href="/articles">Articles</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="/rss">RSS</a>
+      </li>
     </ul>
   </nav>
+  {% if page.url != '/' %}
+    {% include 'social-media.liquid' %}
+  {% endif %}
 </footer>
