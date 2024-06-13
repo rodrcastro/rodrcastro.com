@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {%if title %}
+    {% if title %}
       <title>{{ title }}</title>
       <meta name="twitter:title" content="{{ title }}" />
       <meta property="og:title" content="{{ title }}" />
@@ -12,7 +12,7 @@
       <title>{{ site.title }}</title>
       <meta name="twitter:title" content="{{ title }}" />
       <meta property="og:title" content="{{ site.title }}" />
-    {% endif %} 
+    {% endif %}
 
     {% if description %}
       <meta name="twitter:description" content="{{ description }}" />
@@ -22,11 +22,22 @@
       <meta name="twitter:description" content="{{ site.description }}" />
       <meta name="description" content="{{ site.description }}" />
       <meta property="og:description" content="{{ site.description }}" />
-    {% endif %} 
+    {% endif %}
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
 
     {% include "css/reset.liquid" %}
