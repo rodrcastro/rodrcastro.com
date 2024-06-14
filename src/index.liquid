@@ -3,16 +3,21 @@ layout: layouts/default.liquid
 ---
 
 <div class="main-sections">
-  <section>
-    <h2>Personal website</h2>
-    <p>Hello 👋🏼
-    </p>
-    <p>
-      I'm Rodrigo Castro, a technology enthusiast working at GitBook. My interests span from exploring the latest in tech trends to travelling, movies, TV shows and others. Outside of work, I enjoy diving into personal projects and connecting with like-minded people.
-    </p><br>
-    <p>Here you'll find my personal place on the internet, to share things I'm interested in, working with and anything in between</p>
-    {% include "social-media.liquid" %}
+  <section class="intro">
+    <div class="text-content">
+      <h2>Personal website</h2>
+      <p>Hello 👋🏼</p>
+      <p>
+        I'm Rodrigo Castro, a technology enthusiast working at GitBook. My interests span from exploring the latest in tech trends to travelling, movies, TV shows and others. Outside of work, I enjoy diving into personal projects and connecting with like-minded people.
+      </p>
+      <p>Here you'll find my personal place on the internet, to share things I'm interested in, working with and anything in between</p>
+      {% include "social-media.liquid" %}
+    </div>
+    <div class="image-cropper">
+      <img src="/assets/img/profile.png">
+    </div>
   </section>
+
   <hr>
   <section>
     <h2>Blog Entries</h2>
@@ -41,8 +46,50 @@ layout: layouts/default.liquid
     flex-direction: column;
     gap: var(--space-7);
   }
+
+  .intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .image-cropper {
+    width: 250px;
+    height: 250px;
+    margin-left: var(--space-4);
+  }
+
   .articles-link {
     display: block;
     margin-top: var(--space-4);
+  }
+
+  @media (max-width: 768px) {
+    .intro {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .image-cropper {
+      width: 150px;
+      height: 150px;
+      margin-left: 0;
+      margin-top: var(--space-4);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .image-cropper {
+      width: 150px;
+      height: 150px;
+    }
   }
 </style>
