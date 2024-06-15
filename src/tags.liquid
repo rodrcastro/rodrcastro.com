@@ -16,7 +16,7 @@ permalink: /tags/{{ tag | slugify }}/
 
 <h1>Tagged “{{ tag }}”</h1>
 
-{% assign posts = collections[ tag ] %}
+{% assign posts = collections[tag] %}
 {% include "postlist.liquid" %}
 
 <style>
