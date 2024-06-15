@@ -2,7 +2,7 @@
 title: About me
 description: This page is a sample page so you can see that you can create your own about page
 tags:
-  - personal
+  - teste
 ---
 
 Nulite is a simple, elegant, minimalistic stater project for [Eleventy](https://www.11ty.dev/) to help you create a simple blog with focus on performance and simplicity.
