@@ -15,13 +15,8 @@ layout: layouts/default.liquid
     {{ content }}
   </section>
 </article>
-{% comment %} TODO: 
-                  - Add styles
-                  - Change ID for pagination
-                  - Change aria-label
-                  - Add option to remove the "next" or "previous" if it's the last on the list
-{% endcomment %}
-<nav aria-labelledby="my-pagination" class="pagination">
+
+<nav class="pagination">
   {% if prevPost.url %}
     <a href="{{ prevPost.url }}">Previous post:
       {{ prevPost.data.title }}</a>
