@@ -37,8 +37,8 @@ module.exports = function (eleventyConfig) {
     let posts = collectionApi.getFilteredByGlob("src/posts/blog/*.md")
 
     for(let i = 0; i < posts.length ; i++) {
-        const nextPost = posts[i-1];
-        const prevPost = posts[i + 1];
+        const nextPost = posts[i + 1];
+        const prevPost = posts[i - 1];
 
         posts[i].data["nextPost"] = nextPost;
         posts[i].data["prevPost"] = prevPost;
