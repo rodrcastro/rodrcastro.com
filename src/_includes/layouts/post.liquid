@@ -6,7 +6,7 @@ layout: layouts/default.liquid
     <h1 class="post-title">{{ title }}</h1>
     <div class="post-time">
       <time datetime="{{ post.date }}">
-        {{ page.date | date : "%a, %b %d, %Y" }}
+        {{ page.date | date: "%a, %b %d, %Y" }}
       </time>
     </div>
   </header>
@@ -15,22 +15,7 @@ layout: layouts/default.liquid
     {{ content }}
   </section>
 </article>
-{% assign similar = collections.posts | similarPosts: page.inputPath, tags %} {%
-if similar.length > 0 %}
-<section class="related">
-  <h2 class="related-title">You might also enjoy</h2>
-  <ul class="related-posts">
-    {% for post in similar limit: 2 %}
-    <li>
-      <a class="related-article" href="{{ post.url }}">
-        <h3 class="related-article-title">{{ post.data.title }}</h3>
-        <p class="related-article-description">{{ post.data.description }}</p>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-{% endif %} {% include "css/prism.liquid" %}
+{% include "css/prism.liquid" %}
 
 <style>
   .post-header {
