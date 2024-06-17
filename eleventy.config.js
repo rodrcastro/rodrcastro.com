@@ -34,11 +34,25 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/blog/*.md").reverse();
-  });
+    let posts = collectionApi.getFilteredByGlob("src/posts/blog/*.md")
+
+    for(let i = 0; i < posts.length ; i++) {
+        const nextPost = posts[i + 1];
+        const prevPost = posts[i - 1];
+
+        posts[i].data["nextPost"] = nextPost;
+        posts[i].data["prevPost"] = prevPost;
+    }
+
+    return posts
+  })
+
+  // eleventyConfig.addCollection("posts", function (collectionApi) {
+  //   return collectionApi.getFilteredByGlob("src/posts/blog/*.md");
+  // });
 
   eleventyConfig.addCollection("pages", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/pages/*.md").reverse();
+    return collectionApi.getFilteredByGlob("src/posts/pages/*.md");
   });
 
   eleventyConfig.addLiquidFilter(
