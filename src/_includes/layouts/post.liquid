@@ -16,14 +16,15 @@ layout: layouts/default.liquid
   </section>
 </article>
 {% comment %} TODO: 
-                - Add styles
-                - Change ID for pagination
-                - Change aria-label
-                - Add option to remove the "next" or "previous" if it's the last on the list
+              - Add styles
+              - Change ID for pagination
+              - Change aria-label
+              - Add option to remove the "next" or "previous" if it's the last on the list
 {% endcomment %}
 <nav aria-labelledby="my-pagination" class="pagination">
-  <a href="{{ prevPost.url }}">Previous</a>
-  <a href="{{ nextPost.url }}">Next</a>
+  <a href="{{ prevPost.url }}">Previous post:
+    {{ prevPost.data.title }}</a>
+  <a href="{{ nextPost.url }}">Next post: {{ nextPost.data.title }}</a>
 </nav>
 {% include "css/prism.liquid" %}
 
