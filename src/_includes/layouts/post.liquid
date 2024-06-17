@@ -15,6 +15,13 @@ layout: layouts/default.liquid
     {{ content }}
   </section>
 </article>
+<nav aria-labelledby="my-pagination">
+  <h2 id="my-pagination">This is my Pagination</h2>
+  <ol>
+    <li><a href="{{ prevPost.url }}">Previous</a></li>
+    <li><a href="{{ nextPost.url }}">Next</a></li>
+  </ol>
+</nav>
 {% include "css/prism.liquid" %}
 
 <style>
