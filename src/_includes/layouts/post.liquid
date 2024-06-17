@@ -16,17 +16,14 @@ layout: layouts/default.liquid
   </section>
 </article>
 {% comment %} TODO: 
-  - Add styles
-  - Change ID for pagination
-  - Change aria-label
-  - Add option to remove the "next" or "previous" if it's the last on the list
+                - Add styles
+                - Change ID for pagination
+                - Change aria-label
+                - Add option to remove the "next" or "previous" if it's the last on the list
 {% endcomment %}
-<nav aria-labelledby="my-pagination">
-  <h2 id="my-pagination">This is my Pagination</h2>
-  <ol>
-    <li><a href="{{ prevPost.url }}">Previous</a></li>
-    <li><a href="{{ nextPost.url }}">Next</a></li>
-  </ol>
+<nav aria-labelledby="my-pagination" class="pagination">
+  <a href="{{ prevPost.url }}">Previous</a>
+  <a href="{{ nextPost.url }}">Next</a>
 </nav>
 {% include "css/prism.liquid" %}
 
@@ -42,7 +39,7 @@ layout: layouts/default.liquid
     font-size: var(--font-size-xs);
   }
   .post-container {
-    padding-bottom: var(--space-8);
+    padding-bottom: var(--space-3);
     border-bottom: 1px solid var(--color-text-shade);
   }
   .post-container h2 {
@@ -99,6 +96,12 @@ layout: layouts/default.liquid
   .related-article-description {
     font-size: var(--font-size-xs);
     color: var(--color-text-shade);
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--space-3);
   }
   :root {
     --prism-foreground: #c4c4c5;
