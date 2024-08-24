@@ -1,5 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const codeStyleHooks = require("eleventy-plugin-code-style-hooks");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
@@ -8,9 +8,7 @@ module.exports = function (eleventyConfig) {
     "./public/": "/",
   });
 
-  eleventyConfig.addPlugin(codeStyleHooks, {
-    lineNumbers: false,
-  });
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
