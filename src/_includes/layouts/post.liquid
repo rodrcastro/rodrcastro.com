@@ -25,7 +25,6 @@ layout: layouts/default.liquid
     <a href="{{ nextPost.url }}">Next post: {{ nextPost.data.title }}</a>
   {% endif %}
 </nav>
-{% include "css/prism.liquid" %}
 
 <style>
   .post-header {
@@ -102,25 +101,5 @@ layout: layouts/default.liquid
     display: flex;
     justify-content: space-between;
     padding-top: var(--space-3);
-  }
-  :root {
-    --prism-foreground: #c4c4c5;
-    --prism-background: #1d1e20;
-
-    --prism-comment: #9b9c9d;
-    --prism-string: #da6f6e;
-    --prism-literal: #61a69a;
-    --prism-keyword: #c397d8;
-    --prism-function: #d0bf8f;
-    --prism-deleted: #d54e53;
-    --prism-class: #9b859d;
-    --prism-builtin: #d0bf8f;
-    --prism-property: #ac7b7b;
-    --prism-namespace: #8abeb7;
-    --prism-punctuation: #c4c4c5;
-    --prism-line-number: #a5a5a5;
-    --prism-line-number-gutter: #333333;
-    --prism-line-highlight-background: #3c3c3c;
-    --prism-selection-background: #5c5c5c;
   }
 </style>
