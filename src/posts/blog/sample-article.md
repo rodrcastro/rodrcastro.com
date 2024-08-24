@@ -13,4 +13,9 @@ What if I add some code here?
 let name;
 name = "Rodrigo";
 console.log(`My name is ${name}`);
+
+function helloWorld(obj) {
+  this.function
+  return true
+}
 ```
