@@ -21,7 +21,6 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0"
   },
   "dependencies": {
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@11ty/eleventy-upgrade-help": "^3.0.1"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
   }
 }

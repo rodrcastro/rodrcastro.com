@@ -1,6 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 module.exports = function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
@@ -82,6 +81,4 @@ module.exports = function (eleventyConfig) {
     // folder name and does **not** affect where things go in the output folder.
     pathPrefix: "/",
   };
-  // add upgrade plugin helper
-  eleventyConfig.addPlugin(UpgradeHelper);
 };
