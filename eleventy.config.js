@@ -1,5 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const codeStyleHooks = require("eleventy-plugin-code-style-hooks");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 module.exports = function (eleventyConfig) {
@@ -9,9 +9,7 @@ module.exports = function (eleventyConfig) {
     "./public/": "/",
   });
 
-  eleventyConfig.addPlugin(codeStyleHooks, {
-    lineNumbers: false,
-  });
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
