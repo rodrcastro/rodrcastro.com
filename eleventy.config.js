@@ -1,6 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 module.exports = function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
@@ -54,32 +53,6 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/posts/pages/*.md");
   });
 
-  eleventyConfig.addLiquidFilter(
-    "similarPosts",
-    function (collection, path, tags) {
-      if (!collection) return [];
-      let similarPosts = collection
-        .filter((post) => {
-          return (
-            getSimilarTags(post.data.tags, tags) >= 1 &&
-            post.data.page.inputPath !== path
-          );
-        })
-        .sort((a, b) => {
-          return (
-            getSimilarTags(b.data.tags, tags) -
-            getSimilarTags(a.data.tags, tags)
-          );
-        });
-      if (similarPosts.length < 4) {
-        similarPosts = similarPosts
-          .concat(collection.slice(0, 3))
-          .filter((post) => post.data.page.inputPath !== path);
-      }
-      return getUniquePosts(similarPosts);
-    }
-  );
-
   return {
     // Control which files Eleventy will process
     // e.g.: *.md, *.njk, *.html, *.liquid
@@ -108,23 +81,4 @@ module.exports = function (eleventyConfig) {
     // folder name and does **not** affect where things go in the output folder.
     pathPrefix: "/",
   };
-  // add upgrade plugin helper
-  eleventyConfig.addPlugin(UpgradeHelper);
-};
-
-const getSimilarTags = function (categoriesA, categoriesB) {
-  if (!categoriesA) return [];
-  return categoriesA.filter(Set.prototype.has, new Set(categoriesB)).length;
-};
-
-const getUniquePosts = function (posts) {
-  const field = "url";
-  const uniqueValues = new Set();
-  return posts.filter((item) => {
-    if (!uniqueValues.has(item[field])) {
-      uniqueValues.add(item[field]);
-      return true;
-    }
-    return false;
-  });
 };
