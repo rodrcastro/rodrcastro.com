@@ -1,6 +1,6 @@
 ---
-title: About me
-description: This page is an about page in progress!
+title: Sobre
+description: Esta é uma página em pogresso
 ---
 
-This is in progress :) 
+Ainda em progresso e sendo trabalhada. 
