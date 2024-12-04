@@ -17,6 +17,11 @@
           "type": "string"
         },
         {
+          "title": "permalink",
+          "name": "permalink",
+          "type": "string"
+        },
+        {
           "title": "Publishing date",
           "name": "date",
           "type": "datetime",
