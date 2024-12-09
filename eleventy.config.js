@@ -1,5 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
@@ -52,6 +53,27 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("pages", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/pages/*.md");
   });
+
+  //Image config
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+		// which file extensions to process
+		extensions: "html",
+
+		// Add any other Image utility options here:
+
+		// optional, output image formats
+		formats: ["webp", "jpeg"],
+		// formats: ["auto"],
+
+		// optional, output image widths
+		// widths: ["auto"],
+
+		// optional, attributes assigned on <img> override these values.
+		defaultAttributes: {
+			loading: "lazy",
+			decoding: "async",
+		},
+	});
 
   return {
     // Control which files Eleventy will process
