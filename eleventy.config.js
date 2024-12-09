@@ -62,7 +62,7 @@ module.exports = function (eleventyConfig) {
 		// Add any other Image utility options here:
 
 		// optional, output image formats
-    formats: ["auto"],
+    formats: ["webp", "jpeg"],
 
 		// optional, output image widths
 		// widths: ["auto"],
