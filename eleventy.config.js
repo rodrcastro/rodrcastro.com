@@ -1,6 +1,7 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const path = require("node:path")
 
 module.exports = function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
@@ -74,7 +75,9 @@ module.exports = function (eleventyConfig) {
 		},
 
     filenameFormat: function(id, src, width, format, options) {
-      return `${src}`
+      const extension = path.extname(src);
+      const name = path.basename(src, extension);
+      return `${name}.${format}`;
     }
 	});
 
