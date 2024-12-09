@@ -75,7 +75,7 @@ module.exports = function (eleventyConfig) {
 		},
 
     filenameFormat: function(id, src, width, format, options) {
-      return `${src}.${format}`
+      return `${src}`
     }
 	});
 
