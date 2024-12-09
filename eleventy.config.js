@@ -73,6 +73,10 @@ module.exports = function (eleventyConfig) {
 			loading: "lazy",
 			decoding: "async",
 		},
+
+    filenameFormat: function(id, src, width, format, options) {
+      return `${src}.${format}`
+    }
 	});
 
   return {
