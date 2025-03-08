@@ -1,7 +1,7 @@
 {
-  "name": "nulite-starter",
+  "name": "rodrcastro.com",
   "version": "1.0.0",
-  "description": "A minimal, elegant starter project to create a simple blog with Eleventy",
+  "description": "Eleventy based site and blog",
   "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy",
@@ -10,11 +10,7 @@
     "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
     "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
   },
-  "keywords": [
-    "eleventy",
-    "starter"
-  ],
-  "author": "Diego López",
+  "author": "Rodrigo Castro",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
