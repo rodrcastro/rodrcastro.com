@@ -4,11 +4,11 @@
   "description": "Eleventy based site and blog",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve --quiet",
-    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-    "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+    "build": "pnpm exec eleventy",
+    "start": "pnpm exec eleventy --serve --quiet",
+    "debug": "DEBUG=Eleventy* pnpm exec eleventy",
+    "debugstart": "DEBUG=Eleventy* pnpm exec eleventy --serve --quiet",
+    "benchmark": "DEBUG=Eleventy:Benchmark* pnpm exec eleventy"
   },
   "author": "Rodrigo Castro",
   "license": "ISC",
