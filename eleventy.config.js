@@ -1,7 +1,9 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
-const path = require("node:path")
+const markdownIt = require("markdown-it");
+const MarkdownItGitHubAlerts = require("markdown-it-github-alerts");
+const path = require("node:path");
 
 module.exports = function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
@@ -46,6 +48,15 @@ module.exports = function (eleventyConfig) {
 
     return posts
   })
+
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true,
+  }
+
+  eleventyConfig.setLibrary("md", markdownIt(options));
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(MarkdownItGitHubAlerts));
 
   // eleventyConfig.addCollection("posts", function (collectionApi) {
   //   return collectionApi.getFilteredByGlob("src/posts/blog/*.md");

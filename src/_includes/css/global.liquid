@@ -4,6 +4,15 @@
     margin: 0;
     line-height: calc(1em + 0.75rem);
   }
+
+  :root {
+    --color-note: #0969da;
+    --color-tip: #1a7f37;
+    --color-warning: #9a6700;
+    --color-severe: #bc4c00;
+    --color-caution: #d1242f;
+    --color-important: #8250df;
+  }
   html {
     --color-background: rgb(29, 30, 32);
     --color-background-shade: rgb(65, 66, 68);
@@ -11,9 +20,17 @@
     --color-text-shade: rgb(155, 156, 157);
     --color-primary: rgb(174, 107, 174);
 
-    --font-family: -apple-system, BlinkMacSystemFont, "Inter", "IBM Plex Sans",
-      Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-      Segoe UI Symbol;
+    --font-family: -apple-system
+    , BlinkMacSystemFont
+    , "Inter"
+    , "IBM Plex Sans"
+    , Segoe UI
+    , Helvetica
+    , Arial
+    , sans-serif
+    , Apple Color Emoji
+    , Segoe UI Emoji
+    , Segoe UI Symbol;
 
     --container-max-size: 75ch;
     --container-padding-sides: var(--space-4);
@@ -127,5 +144,75 @@
     position: absolute;
     white-space: nowrap;
     width: 1px;
+  }
+
+  .markdown-alert {
+    padding: 0.5rem 1rem;
+    margin-bottom: 16px;
+    color: inherit;
+    border-left: 0.25em solid #888;
+  }
+
+  .markdown-alert > :first-child {
+    margin-top: 0
+  }
+
+  .markdown-alert > :last-child {
+    margin-bottom: 0
+  }
+
+  .markdown-alert .markdown-alert-title {
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    line-height: 2;
+  }
+
+  .markdown-alert .markdown-alert-title .octicon {
+    margin-right: 0.5rem;
+    display: inline-block;
+    overflow: visible !important;
+    vertical-align: text-bottom;
+    fill: currentColor;
+  }
+
+  .markdown-alert.markdown-alert-note {
+    border-left-color: var(--color-note);
+  }
+
+  .markdown-alert.markdown-alert-note .markdown-alert-title {
+    color: var(--color-note);
+  }
+
+  .markdown-alert.markdown-alert-important {
+    border-left-color: var(--color-important);
+  }
+
+  .markdown-alert.markdown-alert-important .markdown-alert-title {
+    color: var(--color-important);
+  }
+
+  .markdown-alert.markdown-alert-warning {
+    border-left-color: var(--color-warning);
+  }
+
+  .markdown-alert.markdown-alert-warning .markdown-alert-title {
+    color: var(--color-warning);
+  }
+
+  .markdown-alert.markdown-alert-tip {
+    border-left-color: var(--color-tip);
+  }
+
+  .markdown-alert.markdown-alert-tip .markdown-alert-title {
+    color: var(--color-tip);
+  }
+
+  .markdown-alert.markdown-alert-caution {
+    border-left-color: var(--color-caution);
+  }
+
+  .markdown-alert.markdown-alert-caution .markdown-alert-title {
+    color: var(--color-caution);
   }
 </style>
