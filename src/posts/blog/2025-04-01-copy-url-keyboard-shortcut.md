@@ -32,7 +32,7 @@ Procurei navegadores que tivessem isso nativamente e fossem baseados em Chromium
 
 Então voltei pro Chrome, velho de guerra e já conhecido, pensei que faria sentido de momento para não atrapalhar o resto do fluxo de trabalho. E como bom programador não praticante, pensei recentemente se não haveria alguma forma de adicionar essa função em alguma flag escondida do navegador, um script, ou algo do gênero.
 
-![T3 Chat usando Gemini 2.0 Flash](/assets/img/posts/image.png)
+![T3 Chat usando Gemini 2.0 Flash](../../../src/assets/img/posts/image.png)
 
 Joguei no [T3 Chat](http://t3.chat/) - app que estou testando de momento para interagir com LLMs - e o Gemini me sugeriu Apple Script. Nunca usei, não tenho ideia de como funciona e, por isso, nunca tinha nem passado pela minha cabeça como opção. Então, já pensei em integrar isso ao [Keyboard Maestro](https://www.keyboardmaestro.com/main/) para permitir usar um atalho de teclado, com a condição de o Chrome estar aberto e ser a janela ativa no momento.
 
@@ -63,6 +63,6 @@ Nos meus testes funcionou 100% do tempo, então não pedi para fazer nenhuma alt
 - Else
     - Play system beep for error
 
-![Configuração do Keyboard Maestro](/assets/img/posts/image-1.png)
+![Configuração do Keyboard Maestro](../../../src/assets/img/posts/image-1.png)
 
 E pronto! Já tinha o atalho configurado, funcionando 100% do tempo. Espero que seja tão útil pra você quanto foi pra mim 😄
