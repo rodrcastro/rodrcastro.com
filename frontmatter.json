@@ -63,5 +63,6 @@
       "path": "[[workspace]]/src/posts/blog"
     }
   ],
-  "frontMatter.git.enabled": true
+  "frontMatter.git.enabled": true,
+  "frontMatter.framework.startCommand": "pnpm start"
 }
