@@ -5,7 +5,7 @@ const markdownIt = require("markdown-it");
 const MarkdownItGitHubAlerts = require("markdown-it-github-alerts");
 const path = require("node:path");
 
-module.exports = function (eleventyConfig) {
+module.exports = async function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
   // For example, `./public/css/` ends up in `_site/css/`
   eleventyConfig.addPassthroughCopy({
@@ -91,6 +91,10 @@ module.exports = function (eleventyConfig) {
       return `${name}.${format}`;
     }
 	});
+
+  const { IdAttributePlugin } = await import("@11ty/eleventy");
+
+	eleventyConfig.addPlugin(IdAttributePlugin);
 
   return {
     // Control which files Eleventy will process
