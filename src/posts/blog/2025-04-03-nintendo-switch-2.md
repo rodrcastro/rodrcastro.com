@@ -10,4 +10,5 @@ tags:
 categories:
     - jogos
 ---
-<iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/KN0-ve3X4kI?si=1_GTDHu-SzOmSYxC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="743" height="423" src="https://www.youtube-nocookie.com/embed/KN0-ve3X4kI?si=1_GTDHu-SzOmSYxC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
