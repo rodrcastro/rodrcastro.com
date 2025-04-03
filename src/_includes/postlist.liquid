@@ -2,17 +2,29 @@
   {% for post in posts reversed limit: count offset: offset %}
     <li class="article">
       <a href="{{ post.url }}">
-        <h3 class="article-title">{{ post.data.title }}</h3>
-        <div class="article-time">
-          <time datetime="{{ post.date }}">
-            {{ post.date | date: "%a, %b %d, %Y" }}
-          </time>
+        <div class="article-content">
+          <h3 class="article-title">{{ post.data.title }}</h3>
+          <div class="article-time">
+            <time datetime="{{ post.date }}">
+              {{ post.date | date: "%a, %b %d, %Y" }}
+            </time>
+          </div>
+          <p class="article-description">{{ post.data.description }}</p>
         </div>
-        <p class="article-description">{{ post.data.description }}</p>
+        {% if post.data.preview %}
+          <img
+            class="article-preview"
+            loading="lazy"
+            decoding="async"
+            src="{{ post.data.preview }}"
+            alt="Imagem preview do post {{ post.data.title }}"
+            width="300">
+        {% endif %}
       </a>
     </li>
   {% endfor %}
 </ul>
+
 
 <style>
   .article {
@@ -22,24 +34,68 @@
     flex-direction: column;
     gap: var(--space-1);
   }
+
   .article a {
     text-decoration: unset;
+    display: flex;
+    /* Enable flexbox on the <a> element */
+    flex-direction: row;
+    /* Arrange content horizontally */
+    gap: var(--space-2);
+    /* Add some space between text and image */
+    align-items: center;
+    /* Vertically center the content */
   }
+
+  .article-content {
+    flex: 1;
+    /* Allow text content to take remaining space */
+  }
+
   .article + .article {
     margin-top: var(--space-4);
   }
+
   .article-title {
     transition: color 0.2s ease-in-out;
   }
+
   .article:hover .article-title {
     color: var(--color-primary);
   }
+
   .article-description {
     font-size: var(--font-size-xs);
     color: var(--color-text-shade);
   }
+
   .article-time {
     color: var(--color-text-shade);
     font-size: var(--font-size-xs);
   }
+
+  .article-preview {
+    width: 250px;
+    /* Adjust the image width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px;
+    /* Optional: round the corners */
+    overflow: hidden;
+    /* Ensure the image stays within the rounded border */
+    flex-shrink: 0;
+    /* Prevent the image from shrinking */
+  }
+
+  .article-preview img {
+    display: block;
+    /* Remove any default inline spacing */
+    width: 100%;
+    /* Make the image fill the container */
+    height: 100%;
+    /* Make the image fill the container */
+    object-fit: cover;
+    /* Ensure the image covers the area without distortion */
+  }
+
 </style>

@@ -24,6 +24,10 @@
       <meta name="description" content="{{ site.description }}" />
       <meta property="og:description" content="{{ site.description }}" />
     {% endif %}
+    {% if preview %}
+      <meta name="twitter:image" content="{{ preview }}" />
+      <meta property="og:image" content="{{ preview }}" />
+    {% endif %}
 
     <link
       rel="apple-touch-icon"
