@@ -74,7 +74,7 @@ module.exports = async function (eleventyConfig) {
 		// Add any other Image utility options here:
 
 		// optional, output image formats
-    formats: ["webp", "jpeg", "svg"],
+    formats: ["jpeg", "webp", "svg", "png"],
 
 		// optional, output image widths
 		// widths: ["auto"],
