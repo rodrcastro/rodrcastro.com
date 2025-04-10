@@ -2,6 +2,7 @@
   "name": "rodrcastro.com",
   "version": "1.0.0",
   "description": "Eleventy based site and blog",
+  "packageManager": "pnpm@10.1.0",
   "main": "index.js",
   "scripts": {
     "build": "pnpm exec eleventy",
@@ -22,7 +23,6 @@
     "markdown-it": "^14.1.0",
     "markdown-it-github-alerts": "^0.3.1"
   },
-  "packageManager": "pnpm@10.1.0",
   "pnpm": {
     "overrides": {
       "image-size": "^1.2.1"
