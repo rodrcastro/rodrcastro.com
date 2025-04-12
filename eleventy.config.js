@@ -39,16 +39,7 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
     let posts = collectionApi.getFilteredByGlob("src/posts/blog/*.md")
-    // TODO: Add a filter to remove posts that are not published  
-    // TODO: Move to Eleventy navigation collection filter https://www.11ty.dev/docs/filters/collection-items/
-    for(let i = 0; i < posts.length ; i++) {
-        const nextPost = posts[i + 1];
-        const prevPost = posts[i - 1];
-
-        posts[i].data["nextPost"] = nextPost;
-        posts[i].data["prevPost"] = prevPost;
-    }
-
+    .filter(post => !post.data.draft); // Exclude drafts 
     return posts
   })
 
