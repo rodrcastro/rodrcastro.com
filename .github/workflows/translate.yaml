@@ -82,7 +82,7 @@ jobs:
                   print("Skipping translation for empty or whitespace content.")
                   return "" # Return empty string for empty input
 
-              url = os.environ.get("LIBRETRANSLATE_URL", "https://libretranslate.com/translate")
+              url = os.environ.post("LIBRETRANSLATE_URL", "https://libretranslate.com/translate")
               payload = {
                   "q": text,
                   "source": "pt", # Assuming source is always Brazilian Portuguese
