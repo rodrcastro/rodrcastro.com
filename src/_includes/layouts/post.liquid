@@ -17,12 +17,17 @@ layout: layouts/default.liquid
 </article>
 
 <nav class="pagination">
-  {% if prevPost.url %}
-    <a href="{{ prevPost.url }}">Previous post:
-      {{ prevPost.data.title }}</a>
+  {% assign previousPost = collections.posts | getPreviousCollectionItem %}
+  {% assign nextPost = collections.posts | getNextCollectionItem %}
+  {% if previousPost %}
+    <p>Post anterior:
+      <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+    </p>
   {% endif %}
-  {% if nextPost.url %}
-    <a href="{{ nextPost.url }}">Next post: {{ nextPost.data.title }}</a>
+  {% if nextPost %}
+    <p>Próximo post:
+      <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+    </p>
   {% endif %}
 </nav>
 
@@ -99,7 +104,8 @@ layout: layouts/default.liquid
 
   .pagination {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     padding-top: var(--space-3);
   }
+
 </style>
