@@ -56,7 +56,7 @@ jobs:
         if: steps.changed_files.outputs.count > 0
         env:
           # Optional: Set if using a self-hosted instance or specific public one
-          LIBRETRANSLATE_URL: "https://libretranslate.de/translate"
+          LIBRETRANSLATE_URL: "https://libretranslate.com/translate"
         run: |
           echo "Starting translation process..."
           FILES_STAGED=0 # Counter for successfully processed files
@@ -82,7 +82,7 @@ jobs:
                   print("Skipping translation for empty or whitespace content.")
                   return "" # Return empty string for empty input
 
-              url = os.environ.get("LIBRETRANSLATE_URL", "https://libretranslate.de/translate")
+              url = os.environ.get("LIBRETRANSLATE_URL", "https://libretranslate.com/translate")
               payload = {
                   "q": text,
                   "source": "pt", # Assuming source is always Brazilian Portuguese
