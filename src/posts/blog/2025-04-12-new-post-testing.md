@@ -11,4 +11,4 @@ categories: []
 
 Eu estou começando um novo texto. Será que vai fazer alguma tradução?
 
-Mudança aqui
+Mudança aqui. Outra mudança pra rolar um avanço.
