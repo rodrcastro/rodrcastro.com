@@ -238,39 +238,29 @@
   .copy-button {
     position: absolute;
     top: var(--space-2);
-    /* Adjust as needed */
     right: var(--space-2);
-    /* Adjust as needed */
-    padding: var(--space-1) var(--space-2);
-    /* Use existing variables for consistency */
+    padding: 4px;
     background-color: var(--color-background-shade);
     border: 1px solid var(--color-text-shade);
     color: var(--color-text-shade);
     border-radius: 4px;
     cursor: pointer;
-    /* Start hidden, fade in on hover */
     opacity: 0;
     transition: opacity 0.2s ease-in-out
     , background-color 0.2s ease-in-out
     , color 0.2s ease-in-out;
-    /* Style the button content */
     line-height: 1;
-    /* Prevent height changes */
     display: inline-flex;
-    /* Use inline-flex for better alignment */
     align-items: center;
-    gap: var(--space-1);
+    justify-content: center;
     font-size: var(--font-size-xs);
-    /* Match code font size */
   }
 
-  /* Show button on container hover or when button itself is focused */
   .code-block-container:hover .copy-button,
   .copy-button:focus-visible {
     opacity: 1;
   }
 
-  /* Style button hover state */
   .copy-button:hover {
     background-color: var(--color-text-shade);
     color: var(--color-background);
@@ -280,19 +270,25 @@
   /* Style the SVG icon */
   .copy-button svg {
     width: 1em;
-    /* Relative to button font-size */
     height: 1em;
-    /* Relative to button font-size */
-    vertical-align: middle;
-    /* Align better with text */
+    display: inline-flex;
   }
 
   /* Style the status text ('Copied!') */
   .copy-button .copy-status {
-    display: inline-block;
-    min-width: 4ch;
-    /* Reserve space to prevent layout shift */
+    display: none;
     text-align: center;
+  }
+
+  /* When button has .copied class */
+  .copy-button.copied svg {
+    display: none;
+  }
+
+  .copy-button.copied .copy-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Hide the textarea used for copying */

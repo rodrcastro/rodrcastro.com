@@ -14,33 +14,40 @@ document.addEventListener('DOMContentLoaded', () => {
           const textToCopy = codeToCopyArea.value;
           await navigator.clipboard.writeText(textToCopy);
 
-          // Visual feedback
+          // Visual feedback: Add class, set text
+          copyButton.classList.add('copied');
           if (copyStatus) {
-            copyStatus.textContent = 'Copied!';
+            copyStatus.textContent = 'Copied!'; // Set text content
             copyButton.setAttribute('aria-label', 'Code copied to clipboard');
-            copyButton.disabled = true; // Briefly disable button
+            copyButton.disabled = true;
           }
 
-          // Reset feedback after a delay
+          // Reset feedback after a delay: Remove class, clear text
           setTimeout(() => {
+            copyButton.classList.remove('copied');
             if (copyStatus) {
-              copyStatus.textContent = '';
+              copyStatus.textContent = ''; // Clear text content
               copyButton.setAttribute('aria-label', 'Copy code snippet');
               copyButton.disabled = false;
             }
-          }, 2000); // Reset after 2 seconds
+          }, 750); // Reset after 0.75 seconds
 
         } catch (err) {
           console.error('Failed to copy text: ', err);
+          // Handle failure: Add class, set text (optional)
+          copyButton.classList.add('copied'); // Use same class for visual consistency
           if (copyStatus) {
-            copyStatus.textContent = 'Failed!';
+            copyStatus.textContent = 'Failed!'; // Indicate failure
+            copyButton.disabled = true; // Keep disabled briefly on fail too
           }
-           // Reset feedback after a delay even on failure
+           // Reset feedback after a delay: Remove class, clear text
            setTimeout(() => {
+            copyButton.classList.remove('copied');
             if (copyStatus) {
-              copyStatus.textContent = '';
+              copyStatus.textContent = ''; // Clear text content
+              copyButton.disabled = false;
             }
-          }, 2000);
+          }, 1000); // Slightly longer timeout for failure message
         }
       });
     }
