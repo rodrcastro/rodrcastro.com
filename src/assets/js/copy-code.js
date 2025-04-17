@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
               copyButton.setAttribute('aria-label', 'Copy code snippet');
               copyButton.disabled = false;
             }
-          }, 750); // Reset after 0.75 seconds
+          }, 800); // Reset after 0.80 seconds
 
         } catch (err) {
           console.error('Failed to copy text: ', err);
