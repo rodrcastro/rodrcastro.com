@@ -11,10 +11,10 @@ module.exports = async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./public/": "/",
     // Copy JS file for copy code button
-    "./src/assets/js/": "/assets/js/"
+    "./src/assets/js/": "/assets/js/",
+    // Put robots.txt in root
+    'src/robots.txt': '/robots.txt' 
   });
-  // Put robots.txt in root
-  eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
 
   eleventyConfig.addPlugin(syntaxHighlight);
 
