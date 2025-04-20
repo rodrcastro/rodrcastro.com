@@ -31,14 +31,6 @@ module.exports = async function (eleventyConfig) {
   // Watch content images for the image pipeline.
   eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
 
-  eleventyConfig.addFilter("postTags", (tags) => {
-    return Object.keys(tags)
-      .filter((k) => k !== "posts")
-      .filter((k) => k !== "all")
-      .map((k) => ({ name: k, count: tags[k].length }))
-      .sort((a, b) => b.count - a.count);
-  });
-
   eleventyConfig.addCollection("posts", function (collectionApi) {
     let posts = collectionApi.getFilteredByGlob("src/posts/blog/*.md")
     .filter(post => !post.data.draft); // Exclude drafts 

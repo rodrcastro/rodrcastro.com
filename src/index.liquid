@@ -24,20 +24,6 @@ layout: layouts/default.liquid
     {% assign posts = collections.posts %}
     {% include "postlist.liquid" %}
   </section>
-
-  {% assign tagList = collections | postTags %}
-  {% if tagList.length > 0 %}
-    <section>
-      <h2>Tags</h2>
-      {%- for tag in tagList -%}
-        <a href="/tags/{{ tag.name }}">{{ tag.name }}({{ tag.count }})</a>
-        {% if forloop.last != true %}
-          <span>,
-          </span>
-        {% endif %}
-      {%- endfor -%}
-    </section>
-  {% endif %}
 </div>
 
 <style>
