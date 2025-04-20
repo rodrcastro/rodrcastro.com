@@ -2,8 +2,6 @@
 title: Atalho de teclado pra copiar URL no Chrome (CMD + Shift + C)
 description: Usando Apple Script e o Keyboard Maestro para criar um atalho de teclado customizado e copiar URLs mais rápido.
 date: 2025-04-01T17:54:40.113Z
-updated: 2025-04-07
-bla: test
 draft: false
 tags:
     - apps
@@ -71,7 +69,5 @@ Nos meus testes funcionou 100% do tempo, então não pedi para fazer nenhuma alt
     <img src="../../../src/assets/img/posts/image-1.png" alt="Configuração do Keyboard Maestro com o Applescript descrito acima">
     <figcaption>Keyboard Maestro mais uma vez vindo bem a calhar.</figcaption>
 </figure>
-
-![]()
 
 E pronto! Já tinha o atalho configurado, funcionando 100% do tempo. Espero que seja tão útil pra você quanto foi pra mim 😄
