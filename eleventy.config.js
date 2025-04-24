@@ -1,4 +1,4 @@
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
@@ -18,12 +18,30 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(syntaxHighlight);
 
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
-  eleventyConfig.addLiquidFilter(
-    "getNewestCollectionItemDate",
-    pluginRss.getNewestCollectionItemDate
-  );
+  eleventyConfig.addPlugin(feedPlugin, {
+    type: "atom",
+    outputPath: "/feed.xml",
+    collection: {
+      name: "posts",
+      limit: 0,
+    },
+    metadata: {
+      language: "pt",
+      title: "Rodrigo Castro",
+      subtitle: "O espaço de Rodrigo Castro na internet",
+      base: "https://rodrcastro.com",
+      author: {
+        name: "Rodrigo Castro",        
+      }
+    }
+  });
+
+  // eleventyConfig.addPlugin(pluginRss);
+  // eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
+  // eleventyConfig.addLiquidFilter(
+  //   "getNewestCollectionItemDate",
+  //   pluginRss.getNewestCollectionItemDate
+  // );
 
   // Run Eleventy when these files change:
   // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
