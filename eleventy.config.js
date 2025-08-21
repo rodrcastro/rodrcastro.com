@@ -2,7 +2,6 @@ const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
-const MarkdownItGitHubAlerts = require("markdown-it-github-alerts");
 const path = require("node:path");
 
 module.exports = async function (eleventyConfig) {
@@ -88,7 +87,9 @@ module.exports = async function (eleventyConfig) {
   };
 
   eleventyConfig.setLibrary("md", md);
-  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(MarkdownItGitHubAlerts));
+  
+  const { default: markdownItGitHubAlerts } = await import ('markdown-it-github-alerts')
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItGitHubAlerts));
 
   eleventyConfig.addCollection("pages", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/pages/*.md");
