@@ -2,7 +2,9 @@ const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const markdownIt = require("markdown-it");
+const markdownItFootnote = require("markdown-it-footnote");
 const path = require("node:path");
+const anchor = require("markdown-it-anchor");
 
 module.exports = async function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
@@ -86,10 +88,22 @@ module.exports = async function (eleventyConfig) {
             </div>`;
   };
 
-  eleventyConfig.setLibrary("md", md);
-  
   const { default: markdownItGitHubAlerts } = await import ('markdown-it-github-alerts')
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItGitHubAlerts));
+
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItFootnote));
+
+  // TODO: Work on header anchor links to style them better
+  // eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(anchor, {
+  //   permalink: anchor.permalink.linkAfterHeader({
+  //     style: 'aria-label',
+  //     assistiveText: title => `Permalink to "${title}"`,
+  //   })
+  // }));
+
+
+  eleventyConfig.setLibrary("md", md);
+
 
   eleventyConfig.addCollection("pages", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/pages/*.md");
