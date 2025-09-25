@@ -1,6 +1,6 @@
 ---
 title: Primeiras impressões dos AirPods Pro 3
-description: "Primeiras palavras "
+description: "Primeiras impressões sobre os fones sem fio da Apple"
 permalink: blog/primeiras-impressoes-dos-airpods-pro-3.html
 date: 2025-09-25T12:54:53.895Z
 draft: false
