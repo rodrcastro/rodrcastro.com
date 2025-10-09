@@ -5,12 +5,11 @@ layout: layouts/default.liquid
 <div class="main-sections">
   <section class="intro">
     <div class="text-content">
-      <h2>Site pessoal</h2>
       <p>Olá 👋🏼</p>
       <p>
         Bem vindo ao meu lugarzinho na internet. Sou o Rodrigo Castro, um entusiasta de tecnologia com um pézinho do lado de fora das telas.
       </p>
-      <p>Aqui você vai encontrar um pouco dos meus interesses. Navegue à vontade!</p>
+      <p>Aqui você vai encontrar um pouco dos meus interesses, pensamentos, entre outros. Pra entrar em contato comigo, só falar pelas redes abaixo :)</p>
       {% include "social-media.liquid" %}
     </div>
     <div class="image-cropper">
@@ -20,7 +19,7 @@ layout: layouts/default.liquid
 
   <hr>
   <section>
-    <h2>Blog Entries</h2>
+    <h2>Posts no Blog</h2>
     {% assign posts = collections.posts %}
     {% include "postlist.liquid" %}
   </section>

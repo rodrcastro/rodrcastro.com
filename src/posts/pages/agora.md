@@ -1,5 +1,5 @@
 ---
-title: Now
+title: Agora
 description: O que estou fazendo, assistindo e vivendo agora
 ---
 
