@@ -2,5 +2,5 @@
 [X] Move to Eleventy navigation collection filter https://www.11ty.dev/docs/filters/collection-items/
 [X] Change H2 styling (color primary and font-weight: bold)
 [X] Add copy button for code block
-[ ] Add # alongside headers to copy hash id
+[X] Add # alongside headers to copy hash id
 [ ] Add i18n support (pt-br, en)
