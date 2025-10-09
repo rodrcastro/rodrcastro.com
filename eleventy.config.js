@@ -64,6 +64,15 @@ module.exports = async function (eleventyConfig) {
 
   const md = markdownIt(options);
 
+  const anchorLabels = {
+    default: "Copiar link da seção",
+    defaultAria: "Copiar link da seção",
+    copied: "✅",
+    copiedAria: "Link copiado!",
+    error: "Erro ❌",
+    errorAria: "Não foi possível copiar o link",
+  };
+
   // Store the original fence rule
   const defaultRender = md.renderer.rules.fence || function(tokens, idx, options, env, self) {
     return self.renderToken(tokens, idx, options);
@@ -87,6 +96,26 @@ module.exports = async function (eleventyConfig) {
               <textarea class="code-to-copy" style="position: absolute; left: -9999px; top: 0; height: 0; width: 0;" aria-hidden="true" readonly>${rawCode.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</textarea>
             </div>`;
   };
+
+  md.use(anchor, {
+    tabIndex: false,
+    permalink: anchor.permalink.linkInsideHeader({
+      class: "header-anchor",
+      space: false,
+      placement: "after",
+      symbol: `<span class="anchor-symbol" aria-hidden="true">#</span><span class="anchor-copy-status" aria-hidden="true"></span><span class="visually-hidden">${anchorLabels.default}</span>`,
+      renderAttrs: (slug) => ({
+        "aria-label": anchorLabels.defaultAria,
+        "data-anchor-target": slug,
+        "data-copy-label": anchorLabels.default,
+        "data-copy-aria-label": anchorLabels.defaultAria,
+        "data-copied-label": anchorLabels.copied,
+        "data-copied-aria-label": anchorLabels.copiedAria,
+        "data-copy-error-label": anchorLabels.error,
+        "data-copy-error-aria-label": anchorLabels.errorAria,
+      }),
+    }),
+  });
 
   const { default: markdownItGitHubAlerts } = await import ('markdown-it-github-alerts')
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItGitHubAlerts));
