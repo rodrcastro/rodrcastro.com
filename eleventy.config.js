@@ -37,17 +37,6 @@ module.exports = async function (eleventyConfig) {
     }
   });
 
-  // eleventyConfig.addPlugin(pluginRss);
-  // eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
-  // eleventyConfig.addLiquidFilter(
-  //   "getNewestCollectionItemDate",
-  //   pluginRss.getNewestCollectionItemDate
-  // );
-
-  // Run Eleventy when these files change:
-  // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
-
-  // Watch content images for the image pipeline.
   eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
@@ -97,6 +86,7 @@ module.exports = async function (eleventyConfig) {
             </div>`;
   };
 
+  // Anchor in headings config
   md.use(anchor, {
     tabIndex: false,
     permalink: anchor.permalink.linkInsideHeader({
@@ -117,41 +107,20 @@ module.exports = async function (eleventyConfig) {
     }),
   });
 
+  // GitHub alerts and footnote in posts config
   const { default: markdownItGitHubAlerts } = await import ('markdown-it-github-alerts')
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItGitHubAlerts));
-
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItFootnote));
 
-  // TODO: Work on header anchor links to style them better
-  // eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(anchor, {
-  //   permalink: anchor.permalink.linkAfterHeader({
-  //     style: 'aria-label',
-  //     assistiveText: title => `Permalink to "${title}"`,
-  //   })
-  // }));
-
-
   eleventyConfig.setLibrary("md", md);
-
-
   eleventyConfig.addCollection("pages", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/pages/*.md");
   });
 
   //Image config
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		// which file extensions to process
 		extensions: "html",
-
-		// Add any other Image utility options here:
-
-		// optional, output image formats
     formats: ["jpeg", "webp", "svg", "png"],
-
-		// optional, output image widths
-		// widths: ["auto"],
-
-		// optional, attributes assigned on <img> override these values.
 		defaultAttributes: {
 			loading: "lazy",
 			decoding: "async",
@@ -169,31 +138,12 @@ module.exports = async function (eleventyConfig) {
 	eleventyConfig.addPlugin(IdAttributePlugin);
 
   return {
-    // Control which files Eleventy will process
-    // e.g.: *.md, *.njk, *.html, *.liquid
     templateFormats: ["md", "njk", "html", "liquid"],
-
-    // Pre-process *.md files with: (default: `liquid`)
     markdownTemplateEngine: "njk",
-
-    // Pre-process *.html files with: (default: `liquid`)
     htmlTemplateEngine: "njk",
-
-    // These are all optional:
     dir: {
-      input: "src", // default: "."
+      input: "src", 
     },
-
-    // -----------------------------------------------------------------
-    // Optional items:
-    // -----------------------------------------------------------------
-
-    // If your site deploys to a subdirectory, change `pathPrefix`.
-    // Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
-
-    // When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
-    // it will transform any absolute URLs in your HTML to include this
-    // folder name and does **not** affect where things go in the output folder.
     pathPrefix: "/",
   };
 };
