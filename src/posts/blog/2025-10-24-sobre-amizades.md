@@ -28,4 +28,4 @@ Muito obrigado a todos os meus amigos. E obrigado Maria, também uma querida ami
 
 ---
 
-Terminar o texto com um _call-to-action_ como bom marqueteiro, mas pra algo que te vai fazer bem. Manda uma mensagem praquela pessoa que você tem pensado sobre ultimamente. Diz que a quer bem, a quer por perto. Tão simples quanto isso, não é preciso nada mais. Depois me conta [por email](blog@rodrcastro.com?subject=Coment%C3%A1rio%20Sobre%20Amizades) como foi 😁
+Terminar o texto com um _call-to-action_ como bom marqueteiro, mas pra algo que te vai fazer bem. Manda uma mensagem praquela pessoa que você tem pensado sobre ultimamente. Diz que a quer bem, a quer por perto. Tão simples quanto isso, não é preciso nada mais. Depois me conta [por email](mailto:blog@rodrcastro.com?subject=Coment%C3%A1rio%20Sobre%20Amizades) como foi 😁
