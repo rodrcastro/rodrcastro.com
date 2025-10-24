@@ -24,7 +24,7 @@ Como conversei com uma amiga algumas vezes, uns anos atrás, quando passávamos 
 
 E por tudo isso que valorizei (e continuo valorizando) cada um desses amigos que tenho hoje. Porque são pessoas que se importam, que querem o meu bem, tem o desejo de manter essa relação e torcem por mim em todos os aspectos. Assim como eu faço o mesmo por eles.
 
-Muito obrigado a todos os meus amigos. E obrigado Maria, também uma querida amiga que, admitidamente, não tenho sido perfeito na nossa amizade, mas que nos presenteoou com esse deleite de texto. 
+Muito obrigado a todos os meus amigos. E obrigado Maria, também uma querida amiga que, admitidamente, não tenho sido perfeito na nossa amizade, mas que nos presenteou com esse deleite de texto. 
 
 ---
 
