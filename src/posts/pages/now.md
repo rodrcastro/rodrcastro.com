@@ -5,7 +5,7 @@ description: O que estou fazendo, assistindo e vivendo agora
 
 A página _/now_ é uma página que indica o que uma pessoa está fazendo agora em sua vida. [Pode ler mais a respeito sobre páginas _/now_ aqui.](https://nownownow.com/about).
 
-**Última atualização: 7 Out 2025** 
+**Última atualização: 27 Nov 2025** 
 
 ---
 
