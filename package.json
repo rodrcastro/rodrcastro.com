@@ -28,7 +28,9 @@
   "pnpm": {
     "overrides": {
       "image-size": "^1.2.1",
-      "brace-expansion": "^1.1.12"
+      "brace-expansion": "^1.1.12",
+      "minimatch": "^10.2.1",
+      "js-yaml": "^4.1.1"
     }
   }
 }
