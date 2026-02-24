@@ -2,7 +2,7 @@
   "name": "rodrcastro.com",
   "version": "1.0.0",
   "description": "Eleventy based site and blog",
-  "packageManager": "pnpm@10.1.0",
+  "packageManager": "pnpm@10.30.2",
   "main": "index.js",
   "scripts": {
     "build": "pnpm exec eleventy",
